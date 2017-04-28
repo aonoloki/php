@@ -58,3 +58,34 @@
   font-family: sans-serif;
   font-size: 15px;
 }
+
+.table_message
+{
+  width: 100%;
+  font-size: 10px;
+  font-family: sans-serif;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.info_message
+{
+  overflow: hidden;
+  font-size: 7px;
+  padding: 1%;
+}
+
+.message
+{
+  width: 80%;
+  overflow-x: hidden;
+  overflow-y: visible;
+  text-align: left;
+}
+
+.umessage
+{
+  width: 100%;
+  overflow: hidden;
+  word-break: break-all;
+}
