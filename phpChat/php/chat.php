@@ -7,14 +7,27 @@
 		<script src="../js/jquery.min.js" charset="utf-8"></script>
 		<script src="../js/chatControl.js" charset="utf-8"></script>
 	</head>
+	<!-- Ahouuuuuuuuu
+                     .
+                    / V\
+                  / `  /
+                 <<   |
+                 /    |
+               /      |
+             /        |
+           /    \  \ /
+          (      ) | |
+  ________|   _/_  | |
+<__________\______)\__)
+	-->
 	<body>
 
 		<table class="body">
-			<tr>
+			<tr> <!-- Header du chat -->
 				<td class="titre">chAJAX</td>
 			</tr>
 
-			<tr >
+			<tr > <!-- Zone d'affichage du chat -->
 				<td style="height:500px">
 					<div class="chat_aff" id="chat_aff">
 
@@ -22,8 +35,8 @@
 				</td>
 			</tr>
 
-			<tr >
-				<td class="form" valign="top">
+			<tr > <!-- Zone de saisie du chat -->
+				<td class="form" valign="center">
 
 					<table class="form2">
 
@@ -57,7 +70,16 @@
 				</td>
 			</tr>
 
+			<tr class="footer"> <!-- Footer du chat -->
+				<td>
+					<p>
+						Les messages seront supprimés 30mn après leurs publications
+					</p>
+				</td>
+			</tr>
+
 		</table>
 
 	</body>
+
 </html>

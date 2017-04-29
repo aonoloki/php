@@ -1,3 +1,7 @@
+body {
+  background-color: #000;
+}
+
 .body {
   border-collapse: collapse;
   background-color: #444;
@@ -20,7 +24,6 @@ label {
 }
 
 .form {
-  padding-top: 20px;
   height: 80px;
   background-color: #222;
 }
@@ -72,7 +75,7 @@ label {
 }
 
 .message {
-  width: 85%;
+  width: 90%;
   overflow-x: hidden;
   overflow-y: visible;
   text-align: left;
@@ -82,4 +85,11 @@ label {
   width: 100%;
   overflow: hidden;
   word-break: break-all;
+}
+
+.footer {
+  color: #FFF;
+  text-align: center;
+  font-size: x-small;
+  background-color: #222;
 }

@@ -1,12 +1,12 @@
 <?php
-function bdd()
-{
+
+function bdd() { // Connexion à la base de donnée
 	define('MYSQL_HOST', 'localhost');
 	define('MYSQL_USER', 'root');
 	define('MYSQL_PASSWD', 'root');
 	define('MYSQL_DB', 'chat');
 
-	try {
+	try { // Test de connexion
 	  return $db = new PDO ('mysql:=' . MYSQL_HOST . ';dbname=' . MYSQL_DB, MYSQL_USER, MYSQL_PASSWD);
 	  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 	  $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
@@ -14,41 +14,35 @@ function bdd()
 	  $e->getMessage();
 	}
 }
-function ajout_message($bdd,$pseudo,$message)
-{
+
+function ajout_message($bdd,$pseudo,$message) { // Fonction d'ajout des nouveaux messages à la base de donnée
 	$req = $bdd->prepare("INSERT INTO message(Pseudo,Message,Date) VALUES(:Pseudo,:Message,NOW())");
 	$req->execute(array("Pseudo"=>$pseudo,"Message"=>$message));
 }
 
-function message($bdd)
-{
-	$req = $bdd->query("SELECT * FROM message ORDER BY Date ASC");
+function message($bdd) { // Fonction d'affichage des messages existant dans la base de données
+	$req = $bdd->query("SELECT * FROM message ORDER BY Date DESC");
 
 	return $req;
 }
 
-function expire_message($bdd)
-{
-
+function expire_message($bdd) { // Suppression des anciens messages au bout de 30 minutes (par défaut)
 	$req = $bdd->query("DELETE FROM message WHERE Date < DATE_SUB(NOW(), INTERVAL 30 MINUTE)");
 
 }
 
-function pair($nombre)
-{
+function pair($nombre) {
     if ($nombre%2 == 0) return true;
     else return false;
 }
 
 function getRelativeTime($date) {
-    // Déduction de la date donnée à la date actuelle
+    // Formalisation de la date
     $time = time() - strtotime($date);
 
-    // Calcule si le temps est passé ou à venir
+    // Calcule le temps depuis l'envoi du message
     if ($time > 0) {
         $when = "il y a";
-    } else if ($time < 0) {
-        $when = "dans environ";
     } else {
         return "il y a 1 seconde";
     }
@@ -74,7 +68,7 @@ function getRelativeTime($date) {
             } else {
                 $unit = str_replace('{s}', 's', $unit);
             }
-            // Retourne la chaine adéquate
+            // Retourne la phrase adapté
             return $when." ".$delta." ".$unit;
         }
     }
