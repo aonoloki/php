@@ -1,90 +1,84 @@
-.body
-{
+.body {
   border-collapse: collapse;
-  background-color: #222;
+  background-color: #444;
   margin: auto;
   width: 50%;
   border-radius: 10px;
   overflow: hidden;
 }
 
-.titre
-{
+.titre {
   text-align: center;
   font-family: sans-serif;
-  font-size: 15px;
+  font-size: medium;
+  color: white;
+  background-color: #222;
+}
+
+label {
   color: #FFF;
-  background-color: #444;
 }
 
-.form
-{
-  height: 100px;
-  background-color: #444;
+.form {
+  padding-top: 20px;
+  height: 80px;
+  background-color: #222;
 }
 
-.display
-{
+.chat_aff {
   width: 95%;
   height: 100%;
-  background-color: #FFF;
+  background-color: white;
   margin: auto;
   overflow-y: scroll;
 }
 
-.uform
-{
-  background-color: #999;
+.form2 {
   width: 100%;
+  border-collapse: collapse;
   text-align: center;
 }
 
-.pseudo
-{
+.name {
   border-radius: 10px;
-  width: 100%;
-}
-
-.message
-{
-  border-radius: 10px;
-  width: 100%;
-}
-
-.submit
-{
   width: 80%;
+}
+
+.message {
+  border-radius: 10px;
+  width: 100%;
+}
+
+.submit {
+  width: 100%;
   border-radius: 10px;
   font-family: sans-serif;
-  font-size: 15px;
+  font-size: medium;
 }
 
-.table_message
-{
+.table_message {
   width: 100%;
-  font-size: 10px;
+  font-size: small;
   font-family: sans-serif;
   border-collapse: collapse;
   table-layout: fixed;
 }
 
-.info_message
-{
+.info_message {
   overflow: hidden;
-  font-size: 7px;
+  font-size: x-small;
   padding: 1%;
+  border-radius: 10px;
 }
 
-.message
-{
-  width: 80%;
+.message {
+  width: 85%;
   overflow-x: hidden;
   overflow-y: visible;
   text-align: left;
 }
 
-.umessage
-{
+.message2 {
   width: 100%;
   overflow: hidden;
   word-break: break-all;
