@@ -1,3 +1,18 @@
+<?php
+
+include_once ('user_config.php');
+
+if(!$user->is_loggedin()) {
+ $user->redirect('index.php');
+}
+
+$user_id = $_SESSION['user_session'];
+$stmt = $DB_con->prepare("SELECT * FROM users WHERE user_id=:user_id");
+$stmt->execute(array(":user_id"=>$user_id));
+$userRow=$stmt->fetch(PDO::FETCH_ASSOC);
+
+?>
+
 <!doctype html>
 <html lang="fr">
 	<head>
@@ -56,7 +71,7 @@
 
 						<tr>
 							<td>
-								<input class="name" id="name" type="text"  maxlength="25">
+								<input class="name" id="name" type="text"  disabled="true" value="<?php print($userRow['Pseudo']); ?>">
 							</td>
 							<td>
 								<input class="message" id="message" type="text" maxlength="250">
@@ -75,6 +90,11 @@
 					<p>
 						Les messages seront supprimés 30mn après leurs publications
 					</p>
+				</td>
+			</tr>
+			<tr class="footer">
+				<td style="font-size:15px;">
+					<a href="logout.php?logout=true">Déconnexion</a>
 				</td>
 			</tr>
 

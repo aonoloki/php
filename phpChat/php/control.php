@@ -1,4 +1,5 @@
 <?php
+
 require_once("model.php"); // Invoque le fichier model.php
 $bdd = bdd(); // Evite une erreur de variable non existante, et une erreur sur une requête nulle
 

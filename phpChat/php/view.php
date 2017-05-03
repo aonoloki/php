@@ -9,8 +9,6 @@ while($don = $message->fetch()) { // Pour chaque message ($don étant la variabl
 		$color = "#CCC";
 	}
 
-
-
 ?>
 
 <tr style="background-color:<?php echo $color; ?>"> <!-- Application de la couleur du message -->
@@ -18,7 +16,10 @@ while($don = $message->fetch()) { // Pour chaque message ($don étant la variabl
 	<td class="info_message" valign="top">
 		<span style="font-size:small">
 			<?php
-				echo "De ".$don['Pseudo']; // Affichage du pseudo de l'auteur du message
+				if($don['Pseudo'] == "")
+					echo "Invité";
+				else
+					echo "De ".$don['Pseudo']; // Affichage du pseudo de l'auteur du message
 			?>
 		</span>
 	</br>
@@ -30,7 +31,10 @@ while($don = $message->fetch()) { // Pour chaque message ($don étant la variabl
 	<td class="message" >
 		<div class="message2" >
 			<?php
-				echo $don['Message']; // Affichage du message
+				if($don['Message'] == "")
+					echo "à décidé de se taire...";
+				else
+					echo $don['Message']; // Affichage du message
 			?>
 		</div>
 	</td>
