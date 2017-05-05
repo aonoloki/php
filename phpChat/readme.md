@@ -14,5 +14,5 @@ user_pass | varchar(60)<br><br>
 message :<br>
 ID | integer, primary key, auto increment<br>
 user_name | varchar(250)<br>
-user_mail | text<br>
+message | text<br>
 posted_at | datetime
